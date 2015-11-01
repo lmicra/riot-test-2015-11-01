@@ -18,7 +18,11 @@
 			return ++_index;
 		};
 
-		var _timer = setInterval(_tick, 1000);
+		var _timer = null;
+
+		this.on('mount', ()  => {
+			_timer = setInterval(_tick, 1000);
+		});
 
 		this.on('unmount', () => {
 			clearInterval(_timer);

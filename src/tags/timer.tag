@@ -22,7 +22,7 @@
 
 		var timer = setInterval(this.tick, 1000);
 
-		this.on('unmount', function () {
+		this.on('unmount', () => {
 			clearInterval(timer);
 		});
 */
