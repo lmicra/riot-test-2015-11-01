@@ -15,7 +15,7 @@
 
 		var _index = 0;
 		this.getIndex = () => {
-			return _index++;
+			return ++_index;
 		};
 
 		var _timer = setInterval(_tick, 1000);
