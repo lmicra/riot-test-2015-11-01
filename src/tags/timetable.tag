@@ -7,7 +7,11 @@ import timerService from 'timer-service'; // weird syntax but... it works!
 	<script>
 		'use strict';
 
-		this.items = Array.apply(null, Array(parseInt(this.opts.times, 10))).map(Number.prototype.valueOf,0);
+		var _getArrayOfZeros = (arrayLength) => {
+			return Array.apply(null, Array(arrayLength)).map(Number.prototype.valueOf, 0);
+		};
+
+		this.items = _getArrayOfZeros(parseInt(this.opts.times, 10));
 
 		this.time = opts.start || 0;
 
@@ -16,24 +20,17 @@ import timerService from 'timer-service'; // weird syntax but... it works!
 			return ++_index;
 		};
 
-		var _timer = null;
-
 		this.on('mount', ()  => {
 			timerService.on('updated', (newTime) => {
 				this.update({ time: newTime });
 			})
-//			_timer = setInterval(() => {
-//				this.update({ time: timerService.getTime() });
-//			}, 1000);
-		});
-
-		this.on('unmount', () => {
-			clearInterval(_timer);
 		});
 
 		this.on('update', () => {
-			if (this.items.length !== parseInt(this.opts.times, 10)) {
-				this.items = Array.apply(null, Array(parseInt(this.opts.times, 10))).map(Number.prototype.valueOf,0);
+			// required to check for opts.times changes
+			let _times = parseInt(this.opts.times, 10);
+			if (this.items.length !== _times) {
+				this.items = _getArrayOfZeros(_times);
 			}
 		});
 	</script>
