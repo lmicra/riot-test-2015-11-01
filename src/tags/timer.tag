@@ -1,5 +1,5 @@
 <timer>
-	S:{ parent.time } I: { index } TS: { ts }
+	S:{ parent.time } I: { index }
 	<style>
 		timer {
 			display: inline-block;
@@ -8,7 +8,7 @@
 	<script>
 		'use strict';
 
-		this.ts = Date.now();
+//		this.ts = Date.now();
 		this.index = opts.index();
 
 /*

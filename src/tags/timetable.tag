@@ -15,7 +15,6 @@
 
 		var _index = 0;
 		this.getIndex = () => {
-			console.log(_index);
 			return _index++;
 		};
 
