@@ -11,7 +11,7 @@ class TimerService {
 		var _start = start || false;
 		this[timeField] = time || 0;
 		this[intervalField] = null;
-		if (start) {
+		if (_start) {
 			this.start();
 		}
 	}

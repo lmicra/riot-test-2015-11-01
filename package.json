@@ -1,0 +1,28 @@
+{
+  "name": "riot-test-2015-11-01",
+  "version": "0.1.0",
+  "description": "Riot Webpack ES6 Test",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmicra/riot-test-2015-11-01.git"
+  },
+  "keywords": [
+    "riotjs",
+    "webpack",
+    "es6"
+  ],
+  "dependencies": {
+    "webpack": "*",
+    "riot": "*",
+    "riotjs-loader": "*",
+    "babel-core": "^5.8.33",
+    "babel-loader": "^5.3.3"
+  },
+  "author": "Luis Albino <lmikra@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lmicra/riot-test-2015-11-01/issues"
+  },
+  "homepage": "https://github.com/lmicra/riot-test-2015-11-01#readme"
+}
